@@ -5,38 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ho Tung Leung</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("nav ul li a").click(function(e){
+                e.preventDefault();
+                $("nav ul li a").removeClass("active");
+                $(this).addClass("active");
+                var target = $(this).attr("href");
+                $(".content").hide();
+                $(target).fadeIn(1000);
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home">
+    <section id="home" class="content">
         <div class="centered">
             <h1>Ho Tung Leung</h1>
             <p>Optimizing business processes with cutting-edge IT solutions</p>
-            <div class="social-icons">
-                <a href="#"><img src="https://hisoxhiso.github.io/HTL/" alt="GitHub"></a>
-                <a href="#"><img src="https://hisoxhiso.github.io/HTL/" alt="LinkedIn"></a>
-            </div>
         </div>
     </section>
-    <section id="about">
+    <section id="about" class="content" style="display:none;">
         <div class="centered">
             <h2>About</h2>
-            <img src="https://media.licdn.com/dms/image/D5603AQFeZovyoSDHfw/profile-displayphoto-shrink_800_800/0/1677690263598?e=1726099200&v=beta&t=aZcyQaOEFdX9TieT-k2P06Cez4EQCN3ycFo1Gg0H1ro" alt="Profile Picture" class="profile-picture">
+            <img src="images/1677690263598.jpeg" alt="Profile Picture" class="profile-picture">
             <p>Hi there! I'm Janet, an experienced Business Systems Analyst with a proven track record in optimizing business processes and leading the development and deployment of CRM systems.</p>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="content" style="display:none;">
         <div class="centered">
             <h2>Contact</h2>
-            <form action="https://formspree.io/f/{your_form_id}" method="POST">
+            <form action="https://formspree.io/f/xvgpgapp" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -48,6 +57,11 @@
         </div>
     </section>
     <footer>
+        <div class="social-icons">
+            <a href="https://github.com/hisoxhiso"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/janet-leung/"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="mailto:janethtleung@gmail.com"><img src="images/mail.svg" alt="Email"></a>
+        </div>
         <p>&copy; 2024 Ho Tung Leung</p>
     </footer>
 </body>
